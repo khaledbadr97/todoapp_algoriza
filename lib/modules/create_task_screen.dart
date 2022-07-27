@@ -1,0 +1,23 @@
+import 'package:flutter/material.dart';
+import 'package:todo_app/modules/create_task_widget.dart';
+import 'package:todo_app/shared/components/components.dart';
+import 'package:todo_app/shared/components/constants.dart';
+
+class CreateTaskScreen extends StatelessWidget
+{
+  var ScaffoldKey = GlobalKey<ScaffoldState>();
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      key: ScaffoldKey,
+      appBar: AppBar(
+          title:Text('Add task'),
+
+
+          leading: CustomIconButton(onTap: (){ NavigatePop(context: context);},Widgeticon: Icon(Icons.arrow_back_ios),color: Colors.black,)
+      ),
+      body: CreateTaskWidget(),
+    );
+  }
+}
